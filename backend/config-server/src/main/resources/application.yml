@@ -1,0 +1,20 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-server
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: file:../config-repo
+        git:
+          uri: https://github.com/shanmu2710/RainIntel.git
+          default-label: main
+          search-paths:
+            - backend/config-repo
+          username: ${GIT_USERNAME}
+          password: ${GIT_TOKEN}

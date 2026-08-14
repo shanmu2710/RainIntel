@@ -1,0 +1,2 @@
+gis/*.geojson filter=lfs diff=lfs merge=lfs -text
+data/soil/**/*.asc filter=lfs diff=lfs merge=lfs -text

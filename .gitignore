@@ -1,0 +1,65 @@
+# Dependencies
+node_modules/
+
+# Production build
+dist/
+target/
+.vite/
+*.class
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# IDE / Editor
+.vscode/
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+output.txt
+
+# Python
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Python generated files
+*.egg-info/
+
+# Oracle / database files
+*.dmp
+*.dbf
+*.ora
+*.ctl
+
+# Credentials and private keys
+*.pem
+*.key
+*.p12
+*.jks
+
+# Local database files
+*.db
+*.sqlite
+*.sqlite3
+__pycache__/
