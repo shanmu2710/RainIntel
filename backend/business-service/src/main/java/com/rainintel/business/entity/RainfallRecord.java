@@ -5,7 +5,12 @@ import java.time.LocalDate;
 import org.hibernate.annotations.JdbcTypeCode;
 
 @Entity
-@Table(name = "RAINFALL_RECORDS")
+@Table(
+    name = "RAINFALL_RECORDS",
+    indexes = {
+        @Index(name = "IDX_RAINFALL_DISTRICT_DATE", columnList = "DISTRICT_ID, OBSERVATION_DATE DESC")
+    }
+)
 public class RainfallRecord {
 
     @Id

@@ -452,8 +452,16 @@ export default function NewAssessment({ onCancel, onSubmit, triggerToast }) {
                   }
                   const parsedLat = parseFloat((latitude || '').replace(/[a-zA-Z°\s]/g, ''));
                   const parsedLon = parseFloat((longitude || '').replace(/[a-zA-Z°\s]/g, ''));
-                  if (!parsedLat || !parsedLon) {
+                  if (isNaN(parsedLat) || isNaN(parsedLon)) {
                     handleToast('Please capture GPS coordinates using Locate Me.');
+                    return;
+                  }
+                  if (parsedLat < -90 || parsedLat > 90) {
+                    handleToast('Latitude must be between -90 and 90 degrees.');
+                    return;
+                  }
+                  if (parsedLon < -180 || parsedLon > 180) {
+                    handleToast('Longitude must be between -180 and 180 degrees.');
                     return;
                   }
                   
