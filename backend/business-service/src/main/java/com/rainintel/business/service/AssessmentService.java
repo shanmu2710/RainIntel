@@ -297,6 +297,11 @@ public class AssessmentService {
         resp.setStatus(assessment.getStatus());
         resp.setCreatedAt(assessment.getCreatedAt());
 
+        resp.setRoofSlope(assessment.getRoofSlope());
+        resp.setPurpose(assessment.getPurpose());
+        resp.setDistrictName(assessment.getDistrict() != null ? assessment.getDistrict().getDistrictName() : null);
+        resp.setEngineerName(assessment.getEngineer() != null ? assessment.getEngineer().getUsername() : null);
+
         if (result != null) {
             resp.setAnnualRainfallMm(result.getAnnualRainfallMm());
             resp.setRunoffCoefficient(result.getRunoffCoefficient());

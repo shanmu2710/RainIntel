@@ -31,6 +31,11 @@ public class AssessmentDetailResponse {
     private Double confidenceScore;
     private String recommendationReason;
 
+    private String districtName;
+    private String engineerName;
+    private Double roofSlope;
+    private String purpose;
+
     public AssessmentDetailResponse() {}
 
     public Long getAssessmentId() {
@@ -207,5 +212,37 @@ public class AssessmentDetailResponse {
 
     public void setRecommendationReason(String recommendationReason) {
         this.recommendationReason = recommendationReason;
+    }
+
+    public String getDistrictName() {
+        return districtName;
+    }
+
+    public void setDistrictName(String districtName) {
+        this.districtName = districtName;
+    }
+
+    public String getEngineerName() {
+        return engineerName;
+    }
+
+    public void setEngineerName(String engineerName) {
+        this.engineerName = engineerName;
+    }
+
+    public Double getRoofSlope() {
+        return roofSlope;
+    }
+
+    public void setRoofSlope(Double roofSlope) {
+        this.roofSlope = roofSlope;
+    }
+
+    public String getPurpose() {
+        return purpose;
+    }
+
+    public void setPurpose(String purpose) {
+        this.purpose = purpose;
     }
 }

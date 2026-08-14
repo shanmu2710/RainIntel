@@ -18,7 +18,7 @@ export default function Reports({ onExport, onReportSelect }) {
           return {
             id: reportId,
             building: a.buildingName,
-            engineer: 'Jal Shakti Engineer',
+            engineer: a.engineerName ? `Eng. ${a.engineerName}` : 'Jal Shakti Engineer',
             date: new Date(a.createdAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' }),
             status: a.status === 'APPROVED' ? 'Completed' : a.status === 'SUBMITTED' ? 'In review' : 'Processing',
             potential: `${Math.round(a.harvestPotentialL || 0).toLocaleString()} L`,
