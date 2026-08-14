@@ -11,12 +11,21 @@ connection = oracledb.connect(
 
 cursor = connection.cursor()
 
-# 1. Counts
-cursor.execute("SELECT COUNT(*) FROM SOIL_GRID_CELLS")
-print("\nSOIL_GRID_CELLS:", cursor.fetchone()[0])
+def check_table_count(table_name):
+    try:
+        cursor.execute(f"SELECT COUNT(*) FROM {table_name}")
+        return cursor.fetchone()[0]
+    except Exception:
+        return "Table not created/accessible"
 
-cursor.execute("SELECT COUNT(*) FROM SOIL_GRID_DATA")
-print("SOIL_GRID_DATA :", cursor.fetchone()[0])
+# 1. Counts
+print("\nDatabase Table Counts:")
+print(f"  SOIL_GRID_CELLS    : {check_table_count('SOIL_GRID_CELLS')}")
+print(f"  SOIL_GRID_DATA     : {check_table_count('SOIL_GRID_DATA')}")
+print(f"  RAINFALL_DISTRICTS : {check_table_count('RAINFALL_DISTRICTS')}")
+print(f"  RAINFALL_RECORDS   : {check_table_count('RAINFALL_RECORDS')}")
+print(f"  USERS              : {check_table_count('USERS')}")
+print(f"  ASSESSMENTS        : {check_table_count('ASSESSMENTS')}")
 
 
 # 2. Grid samples
