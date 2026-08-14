@@ -3,7 +3,12 @@ package com.rainintel.business.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "RAINFALL_DISTRICTS")
+@Table(
+    name = "RAINFALL_DISTRICTS",
+    indexes = {
+        @Index(name = "IDX_DISTRICTS_NAME", columnList = "DISTRICT_NAME")
+    }
+)
 public class District {
 
     @Id
