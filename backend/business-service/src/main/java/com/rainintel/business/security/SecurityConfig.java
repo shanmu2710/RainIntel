@@ -32,7 +32,7 @@ public class SecurityConfig {
                 )
             )
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/api/districts/**", "/api/gis/lookup/**").permitAll() // permit lookup queries
+                .requestMatchers("/api/districts", "/api/districts/**", "/api/gis/lookup/**").permitAll() // permit lookup queries
                 .anyRequest().authenticated()
             )
             .addFilterBefore(

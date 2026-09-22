@@ -18,7 +18,7 @@ spring:
             - id: assessments-route
               uri: lb://business-service
               predicates:
-                - Path=/api/assessments/**
+                - Path=/api/assessments, /api/assessments/**
 
             - id: gis-route
               uri: lb://business-service
@@ -28,7 +28,7 @@ spring:
             - id: districts-route
               uri: lb://business-service
               predicates:
-                - Path=/api/districts/**
+                - Path=/api/districts, /api/districts/**
 
             - id: analytics-route
               uri: lb://business-service
