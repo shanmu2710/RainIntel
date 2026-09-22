@@ -1,20 +1,23 @@
 server:
-  port: 8888
+  port: ${PORT:8888}
 
 spring:
   application:
     name: config-server
+
   profiles:
-    active: native
+    active: ${SPRING_PROFILES_ACTIVE:native}
+
   cloud:
     config:
       server:
         native:
           search-locations: file:../config-repo
+
         git:
-          uri: https://github.com/asma9028/RainIntel.git
-          default-label: feature/person1-platform
+          uri: ${GIT_URI:https://github.com/shanmu2710/RainIntel.git}
+          default-label: ${GIT_LABEL:feature/person1-backend-integration-clean}
           search-paths:
             - backend/config-repo
-          username: ${GIT_USERNAME}
-          password: ${GIT_TOKEN}
+          username: ${GIT_USERNAME:}
+          password: ${GIT_TOKEN:}
